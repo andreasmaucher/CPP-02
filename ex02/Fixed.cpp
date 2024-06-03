@@ -6,7 +6,7 @@
 /*   By: amaucher <amaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:22:27 by amaucher          #+#    #+#             */
-/*   Updated: 2024/06/03 15:07:02 by amaucher         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:43:06 by amaucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ Fixed::Fixed()
 }
 
 // Int constructor called
-Fixed::Fixed( const int n ) : _fixed_point( n << _fract_bits ) 
+Fixed::Fixed(const int n) : _fixed_point(n << _fract_bits) 
 {	
 }
 
 // Float constructor called
-Fixed::Fixed( const float n ) : _fixed_point( std::roundf( n * ( 1 << _fract_bits ) ) ) 
+Fixed::Fixed(const float n) : _fixed_point(roundf(n *(1 << _fract_bits))) 
 {
 }
 

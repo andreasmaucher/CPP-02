@@ -6,7 +6,7 @@
 /*   By: amaucher <amaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:22:27 by amaucher          #+#    #+#             */
-/*   Updated: 2024/06/03 14:34:31 by amaucher         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:43:53 by amaucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Fixed::Fixed(const int n): _fixed_point(n << _fract_bits)
 
 // -> convert float to fixed-point
 // roundf: rounds the result to the nearest int
-Fixed::Fixed(const float n): _fixed_point(std::roundf(n * (1 << _fract_bits)))
+Fixed::Fixed(const float n): _fixed_point(roundf(n * (1 << _fract_bits)))
 {
     std::cout << "Float constructor called" << std::endl;
 }

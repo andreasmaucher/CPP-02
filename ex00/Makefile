@@ -6,7 +6,7 @@
 #    By: amaucher <amaucher@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/23 14:22:27 by amaucher          #+#    #+#              #
-#    Updated: 2024/04/25 16:34:11 by amaucher         ###   ########.fr        #
+#    Updated: 2024/06/03 17:40:03 by amaucher         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,18 @@ SOURCES = main.cpp Fixed.cpp
 		
 OBJS = $(SOURCES:.cpp=.o)
 
-CC = c++ -g
+CXX = c++
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)	
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXLAGS) $(OBJS) -o $(NAME)
+
+#rule for building .o files from .cpp files
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
